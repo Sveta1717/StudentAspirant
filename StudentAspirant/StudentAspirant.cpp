@@ -80,7 +80,7 @@ class Student
 
 public:	
 
-	Student()
+	Student() : Student("No surname", "No name", "No patronymic", 10/10/2000, "No adress", "No phone")
 	{
 	}
 	Student(const char* surname, const char* name, const char* patronymic)
@@ -169,10 +169,7 @@ public:
 		if (name != nullptr) delete[]name;
 		if (patronymic != nullptr)delete[]patronymic;
 		if (adress != nullptr)delete[]adress;
-		if (phone != nullptr)delete[]phone;
-		/*delete[]marks;
-		delete[]coursework;
-		delete[]exam;*/
+		if (phone != nullptr)delete[]phone;		
 	}
 
 	void SetDate(unsigned short day, unsigned short month, unsigned short year)
@@ -250,32 +247,7 @@ public:
 		cout << "Отчество: " << patronymic << "\n";
 		cout << "Дата рождения " << d.GetDay() << "." << d.GetMonth() << "." << d.GetYear() << "\n";
 		cout << "Адрес: " << adress << "\n";
-		cout << "Телефон: " << phone << "\n";
-		/*cout << "Зачет: ";
-		if (counterMarks > 0)
-		{
-			for (int i = 0; i < 13; i++)
-			{
-				cout << marks[i] << " ";
-			}
-		}
-		cout << "\nКурсовая: ";
-
-		if (counterCoursework > 0)
-		{
-			for (int i = 0; i < 13; i++)
-			{
-				cout << coursework[i];
-			}
-		}
-		cout << "\nЭкзамен: ";
-		if (counterExam > 0)
-		{
-			for (int i = 0; i < 13; i++)
-			{
-				cout << exam[i];
-			}
-		}*/
+		cout << "Телефон: " << phone << "\n";		
 		cout << "\n";
 	}
 
@@ -284,8 +256,7 @@ public:
 		SetSurname(this->surname);
 		SetName(this->name);
 		SetSurname(this->surname);
-		SetPatronymic(this->patronymic);
-		//Date;
+		SetPatronymic(this->patronymic);		
 		SetAdress(this->adress);
 		SetPhone(this->phone);
 	}
@@ -393,7 +364,7 @@ class Aspirant : public Student
 	string theme;
   
 public:
-	Aspirant()
+	Aspirant():Aspirant("No them", "No surname", "No name", "No patronymic")
 	{		
 	}
 
